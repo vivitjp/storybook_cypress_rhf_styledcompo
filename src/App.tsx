@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback, useState } from "react"
+import styled from "styled-components"
+import { Button } from "./components/Button"
+import { DivMin } from "./components/DivMin"
+import { HelperCss } from "./components/HelperCss"
+import { HelperKeyframes } from "./components/HelperKeyframes"
+import { HelperSSManger } from "./components/HelperSSManager"
+
+const FlexColDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+`
 
 function App() {
+  const [value, setValue] = useState("123")
+  const handleClick = useCallback((value: string = "678") => {
+    setValue(value)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <FlexColDiv>
+      <Button size="medium" primary={true} onClick={() => handleClick("ABC")}>
+        CLICK(fixNum)
+      </Button>
+      <DivMin value={"HEY"} />
+      <HelperCss param={true} flag={true}>
+        Helper CSS
+      </HelperCss>
+      <HelperKeyframes>Key Button</HelperKeyframes>
+      <HelperSSManger />
+    </FlexColDiv>
+  )
 }
 
-export default App;
+export default App
