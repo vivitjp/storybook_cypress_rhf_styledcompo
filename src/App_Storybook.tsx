@@ -13,7 +13,7 @@ const FlexColDiv = styled.div`
   gap: 5px;
 `
 
-function App() {
+export function App_Storybook() {
   const [value, setValue] = useState("123")
   const handleClick = useCallback((value: string = "678") => {
     setValue(value)
@@ -33,5 +33,3 @@ function App() {
     </FlexColDiv>
   )
 }
-
-export default App

@@ -1,0 +1,38 @@
+* {
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.containerFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.containerRow {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+input {
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+}
+
+select {
+  padding: 5px 10px;
+  border: 1px solid #aaa;
+}
+
+.error {
+  color: red;
+}
