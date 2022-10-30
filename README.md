@@ -1,46 +1,176 @@
-# Getting Started with Create React App
+◉ 見出し
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Title1
 
-## Available Scripts
+## Title2
 
-In the project directory, you can run:
+### Title3
 
-### `npm start`
+#### Title4
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Title1
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Title2
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+◉ 通常文
 
-### `npm run build`
+Normal Sentence1
+Normal Sentence2
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+◉ 文字修飾
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_Note_
+**Note**
+**_Note_**
 
-### `npm run eject`
+`npm`
+_`npm`_
+**`npm`**
+**_`npm`_**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`See 'Quote'` という書き方も可能
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`` See `Quote` `` という書き方も可能
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+~~打ち消し~~
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+◉ リスト(= \*)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- list1
+- list2
+  - list1
+    - list2
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. list1
+1. list2
+   1. list1-1
+1. list1
+
+1\. list1
+
+2\. list2
+
+<dl>
+  <dt>リンゴ</dt>
+  <dd>赤いフルーツ</dd>
+  <dt>オレンジ</dt>
+  <dd>橙色のフルーツ</dd>
+</dl>
+
+---
+
+◉ チェックボックス(VSCode では無効)
+
+[ ] タスク 1
+[x] タスク 2
+
+---
+
+◉ 線
+
+===
+(VSCode では無効)
+
+---
+
+◉ リンク
+
+Open [Local host](http://localhost:3000)
+
+[Some Link Name](http://localhost:3000, "Click Here")
+
+![Qiita](https://qiita-image-store.s3.amazonaws.com/0/45617/015bd058-7ea0-e6a5-b9cb-36a4fb38e59c.png "Qiita")
+
+<img width="50" src="https://qiita-image-store.s3.amazonaws.com/0/45617/015bd058-7ea0-e6a5-b9cb-36a4fb38e59c.png">
+
+---
+
+◉ 数式
+
+x^3 + y^4 = 20 のインライン表示: $x^3 + y^4 = 20$
+
+$a = \{1, 2, 3\}$
+
+---
+
+◉ 折りたたみ
+
+<details><summary>サンプルコード</summary>
+
+```rb
+puts 'Hello, World'
+```
+
+</details>
+
+---
+
+◉ 表
+
+| name  | address | phone     | point |
+| ----- | :-----: | --------- | ----: |
+| John  |  Tokyo  | 090-5644- |    20 |
+| Smith |  Osaka  | 070-?     |  1000 |
+
+---
+
+◉ 引用
+
+> 引用はこのようにすると良い。長い文章でも適宜改行しつつ全部表示してくれます。
+> 複数行の場合、改行するたびに記号を書く必要あり。
+>
+> > 再引用は記号を２回書くことで表現可能
+> > 複数行の場合、改行するたびに記号を書く必要あり。
+
+---
+
+◉ コード
+
+```js
+JavaScript //comment
+const id = getNewNumber("0")
+```
+
+```ts
+TypeScript //comment
+const id: number = getNewNumber<string>(`age`)
+```
+
+```js
+cy.get(`.todo-list li`) //BackQuoteもOK
+  .should("have.length", 1)
+  .first()
+  .should("have.text", "Address")
+```
+
+---
+
+◉ コード(拡張)
+
+```diff_js(*Qiita)
+- const takeout = ()=>{ ... }
++ const takeout = ()=>{ ... }
+```
+
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
+\left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
+
+```plantuml
+Bob->Alice : Hello!
+```
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
