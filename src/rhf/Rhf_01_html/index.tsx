@@ -6,7 +6,7 @@ type Inputs = {
   address: string
 }
 
-export const Rhf_01_basic_form = () => {
+export const Form = () => {
   const {
     register,
     handleSubmit,
@@ -24,11 +24,15 @@ export const Rhf_01_basic_form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("name", { required: true })} />
-      <input {...register("address")} />
-      {errors.address && <span>This field is required</span>}
-      <input type="submit" />
-    </form>
+    <div className="containerBlock">
+      <div className="note">HTML + ...register(NAME)</div>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input {...register("name", { required: true })} />
+        <input {...register("address")} />
+        <input type="submit" />
+      </form>
+      {!!errors.name && <div className="error">"name" is required</div>}
+    </div>
   )
 }

@@ -2,7 +2,7 @@ import React from "react"
 import { UseFormRegister } from "react-hook-form"
 
 export type MySelect = {
-  Age: number
+  age: number
 }
 
 export const MySelect = React.forwardRef<
