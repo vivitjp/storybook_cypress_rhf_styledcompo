@@ -11,12 +11,16 @@ export const Form = () => {
     handleSubmit,
     formState: { errors, isDirty }, //isTouched
     watch,
+    reset,
   } = useForm<InputValues>({
     defaultValues: { name: "Karen" },
     mode: "onChange",
+    shouldUnregister: false,
   })
 
   const onSubmit: SubmitHandler<InputValues> = (data) => {
+    console.log(data)
+    reset()
     console.log(watch("name"))
   }
 
@@ -41,7 +45,6 @@ export const Form = () => {
           name="name"
           rules={rules}
           render={({ field }) => {
-            //const { name, onBlur, onChange, ref, value } = field
             return (
               <TextField
                 label="name"
