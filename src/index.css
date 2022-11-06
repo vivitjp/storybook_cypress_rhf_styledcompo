@@ -35,7 +35,8 @@
   content: "■ ";
 }
 
-form {
+form,
+div.main {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -46,6 +47,7 @@ form {
 input {
   padding: 5px 10px;
   border: 1px solid #aaa;
+  width: 100px;
 }
 
 select {

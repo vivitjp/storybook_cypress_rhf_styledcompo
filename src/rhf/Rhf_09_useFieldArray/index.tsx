@@ -1,41 +1,53 @@
 import { useForm, useFieldArray, Controller } from "react-hook-form"
 
 export const Form = () => {
-  const { register, control, handleSubmit, reset, trigger, setError } =
-    useForm() // defaultValues: 使用不可
-  const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
-    { control, name: "test" }
-  )
+  const { register, control, handleSubmit } = useForm()
+  //他: reset, trigger, setError, 使用不可: defaultValues
+  const { fields, append, remove, prepend } = useFieldArray({
+    control,
+    name: "test",
+  })
+  //他: prepend, swap, move, insert
+
+  const defValues = { firstName: "Gill", lastName: "Smith" }
 
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
-      <ul>
-        {fields.map((item, index) => (
-          <li key={item.id}>
-            <input {...register(`test.${index}.firstName`)} defaultValue="" />
+    <div className="containerBlock">
+      <div className="note">FieldArray</div>
 
-            <Controller
-              render={({ field }) => <input {...field} />}
-              name={`test.${index}.lastName`}
-              control={control}
-              defaultValue=""
-            />
+      <form onSubmit={handleSubmit((data) => console.log(data))}>
+        <ul>
+          {fields.map((item, index) => (
+            <li key={item.id}>
+              <input
+                {...register(`test.${index}.firstName`)}
+                defaultValue="" //各methodのdefaultValues値が入る
+              />
 
-            <button type="button" onClick={() => remove(index)}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+              <Controller
+                render={({ field }) => <input {...field} />}
+                name={`test.${index}.lastName`}
+                control={control}
+                defaultValue="" //各methodのdefaultValues値が入る
+              />
 
-      <button
-        type="button"
-        onClick={() => append({ firstName: "aBill", lastName: "aLuo" })}
-      >
-        append
-      </button>
+              <button type="button" onClick={() => remove(index)}>
+                削除
+              </button>
+            </li>
+          ))}
+        </ul>
 
-      <input type="submit" />
-    </form>
+        <button type="button" onClick={() => append(defValues)}>
+          追加(後)
+        </button>
+
+        <button type="button" onClick={() => prepend(defValues)}>
+          追加(前)
+        </button>
+
+        <input type="submit" />
+      </form>
+    </div>
   )
 }

@@ -29,7 +29,7 @@ export const Form = () => {
 
   return (
     <div className="containerBlock">
-      <div className="note">MUI2 + Controller</div>
+      <div className="note">MUI + Yup Verification</div>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller

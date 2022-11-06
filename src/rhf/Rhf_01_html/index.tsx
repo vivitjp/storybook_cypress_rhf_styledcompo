@@ -1,4 +1,3 @@
-import React from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
 
 type Inputs = {
@@ -19,7 +18,8 @@ export const Form = () => {
     },
   })
 
-  const onSubmit: SubmitHandler<Inputs> = () => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data)
     console.log(`Watch: name= ${watch("name")}, address= ${watch("address")}`)
   }
 
